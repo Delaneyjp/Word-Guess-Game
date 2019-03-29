@@ -1,0 +1,91 @@
+
+/* HEADER STYLING */
+.header {
+    height: 175px;
+    width: 100%;
+    min-width: 300px;
+    border-bottom: 5px solid gold;
+}
+
+.header {
+    background: url(../images/movie_posters.jpg);
+    height: 175px;
+}
+
+header h1 {
+    font-size: 75px;
+    color: gold;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 5px 5px brown;
+}
+
+@media only screen and (max-width: 1210px) {
+    .header h1 {
+        font-size: 75px;
+    }
+}
+@media only screen and (max-width: 945px) {
+    .header h1 {
+        font-size: 75px;
+    }
+} 
+@media only screen and (max-width: 500px) {
+    .header h1 {
+        font-size: 50px;
+        padding-top: 20px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .header h1 {
+        font-size: 30px;
+        padding-top: 50px;
+    }
+}
+
+
+/* NEXT */
+
+body {
+    background-color: black;
+}
+.wrapper {
+    padding: 225px;
+}
+.container {
+    border: 5px solid gold;
+    background-color: brown;
+}
+
+.myRow1 {
+    height: 100px;
+    background-color:whitesmoke;
+    color: brown;
+    font-size: x-large;
+    font-weight: 700;
+    border: 3px solid black;
+}
+.myRow2 {
+    height: 50px;
+    font-size: 30px;
+    font-weight: 200;
+}
+.myRow3 {
+    height:300px;
+    font-size: 100px;
+    font-weight: 900;
+    color: gold;
+    text-shadow: 1px 8px black;
+}
+.myRow4 {
+    height: 150px;
+    font-size: xx-large;
+    font-family: cursive;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.myRow5 {
+    border: 2px solid black;
+    background: whitesmoke;
+    height: 30px;
+}
