@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -21,53 +22,64 @@
 
     <wrapper class="wrapper">
         <div class="container">
+
+            <!-- HINT SECTION -->
             <div class="row myRow1 align-items-center">
                 <div class="col-12 text-center">
-                    <p class="hint text-center">HINT: THIS IS THE SECTION THAT WILL INCLUDE A SHORT SENTENCE THAT GIVES
-                        A
-                        CLUE AS TO WHAT THE WORD MAY BE...</p>
+                    <p class="hint text-center">
+                        <span id="word-hints"></span>
+                        <!-- WIN/LOSE -->
+                        <span id="you-win">YOU WIN!!!</span>
+                        <span id="you-lose">YOU LOSE!!!</span>
+                    </p>
                 </div>
             </div>
 
+            <!-- WIN/LOSE COUNTER & REMAINING GUESSES (COUNTERS) -->
             <div class="row myRow2 align-items-center">
+
                 <div class="col-3">
-                    <p class="wins text-right">_____ WINS</p>
+                    <p class="wins text-right"> <span id="win-count"></span> WINS</p>
                 </div>
+
                 <div class="col-3">
-                    <p class="losses text-left">_____ LOSSES</p>
+                    <p class="losses text-left"> <span id="loss-count"></span> LOSSES</p>
                 </div>
 
                 <div class="col-6">
-                    <p class="guesses text-center">_____ REMAINING GUESSES</p>
-                    </style>
+                    <p class="guesses text-center"> <span id="remainingGuesses"></span> REMAINING GUESSES</p>
                 </div>
             </div>
+            <hr>
+            <!-- COUNTERS END -->
 
+            <!-- GAME -->
+            <!-- WORD TO GUESS -->
             <div class="row myRow3 align-items-center">
                 <div class="col-12">
-                    <p class="word text-center align-items-center">HIDDEN WORD</p>
+                    <p class="word text-center align-items-center"> <span id="currentWord"></span></p>
                 </div>
             </div>
-
+            <hr>
+            <!-- GUESSED LETTERS -->
             <div class="row myRow4 align-items-center">
                 <div class="col-12">
-                    <p class="letters text-center">CHOSEN LETTERS</p>
+                    <p class="letters text-center"><span id="guessedLetters"></span></p>
                 </div>
             </div>
+            <!--GAME END-->
 
+            <!-- INSTRUCTIONS -->
             <div class="row myRow5 align-items-center">
                 <div class="col-12">
-                    <p class="instructions text-center">PRESS ANY KEY TO GET STARTED... YOU HAVE 6 TRIES</p>
+                    <p id="instructions" class="instructions text-center"><span class="blinking">PRESS ANY KEY TO GET
+                            STARTED... YOU HAVE 9 TRIES</span></p>
                 </div>
             </div>
 
 
         </div>
     </wrapper>
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -79,7 +91,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="game.js"></script>
+
+    <script>
+        hangmanGame.updateDisplay();
+    </script>
+
 
 </body>
 
