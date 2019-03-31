@@ -5,6 +5,7 @@
 */
 
 
+
 var masterWordList = // Word list
     [
         "harry potter",
@@ -86,6 +87,7 @@ var hangmanGame = {
         // Total Wins & Looses
         document.getElementById("totalWins").innerText = this.wins;
         document.getElementById("totalLosses").innerText = this.losses;
+
 
         // currentword being guessed
         var tempWord = "";

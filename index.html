@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script>
+        hangmanGame.updateDisplay();
+    </script>
 
 
 </head>
@@ -40,15 +43,16 @@
             <div class="row myRow2 align-items-center">
 
                 <div class="col-3">
-                    <p class="wins text-right"> <span id="totalWins">&nbsp&nbsp&nbsp</span> WINS</p>
+                    <p class="wins text-right"> <span id="totalWins">0</span> WINS</p>
                 </div>
 
                 <div class="col-3">
-                    <p class="losses text-left"><span id="totalLosses">&nbsp&nbsp&nbsp</span> LOSSES</p>
+                    <p class="losses text-left"><span id="totalLosses">0</span> LOSSES</p>
                 </div>
 
                 <div class="col-6">
-                    <p class="guesses text-center"><span id="remainingGuesses">&nbsp&nbsp&nbsp</span> REMAINING GUESSES
+                    <p class="guesses text-center"><span id="remainingGuesses">&nbsp;&nbsp;&nbsp;</span> REMAINING
+                        GUESSES
                     </p>
                 </div>
             </div>
@@ -83,9 +87,6 @@
         </div>
     </wrapper>
 
-    <script>
-        hangmanGame.updateDisplay();
-    </script>
 
     <script src="assets/javascript/game.js"></script>
 

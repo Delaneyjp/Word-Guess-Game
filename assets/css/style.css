@@ -87,12 +87,11 @@ body {
     letter-spacing: 10px;
 }
 
-#pressKeyTryAgain, 
-#newGame, 
+
 #youWin,
 #youLose { display: none;}
 
-#youWin, #youLose {
+#youWin, #youLose, #newGame {
     font-size: 50px;
     font-weight: 900;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -100,6 +99,8 @@ body {
     color:brown;
 }
 
+#pressKeyTryAgain, 
+#newGame { display: block;}
 
 /* Media Queries */
 @media only screen and (max-width: 1210px) {
@@ -136,6 +137,9 @@ body {
         font-size: 20px;
         font-weight: 200px;
     }
+    #newGame {
+        font-size: 40px;
+    }
 } 
 @media only screen and (max-width: 500px) {
     .header h1 {
@@ -159,6 +163,9 @@ body {
     .myRow2 {
         font-size: 12px;
         font-weight: 200;
+    }
+    #newGame {
+        font-size: 27px;
     }
 }
 @media only screen and (max-width: 330px) {
@@ -185,5 +192,8 @@ body {
     .myRow2 {
         font-size: 12px;
         font-weight: 200;
+    }
+    #newGame {
+        font-size: 25px;
     }
 }
