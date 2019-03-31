@@ -1,7 +1,7 @@
 
 /* HEADER STYLING */
 .header {
-    height: 175px;
+    height: 125px;
     width: 100%;
     min-width: 300px;
     border-bottom: 5px solid gold;
@@ -9,11 +9,11 @@
 
 .header {
     background: url(../images/movie_posters.jpg);
-    height: 175px;
+    height: 125px;
 }
 
 header h1 {
-    font-size: 75px;
+    font-size: 50px;
     color: gold;
     font-weight: 900;
     text-align: center;
@@ -22,18 +22,25 @@ header h1 {
 
 @media only screen and (max-width: 1210px) {
     .header h1 {
-        font-size: 75px;
+        font-size: 50px;
+    }
+    #youWin, #youLose {
+        font-size: 50px;
+        font-weight: 900;
     }
 }
 @media only screen and (max-width: 945px) {
     .header h1 {
-        font-size: 75px;
+        font-size: 50px;
+    }
+    #youWin, #youLose {
+        font-size: 50px;
+        font-weight: 900;
     }
 } 
 @media only screen and (max-width: 500px) {
     .header h1 {
         font-size: 50px;
-        padding-top: 20px;
     }
 }
 @media only screen and (max-width: 330px) {
@@ -81,8 +88,9 @@ body {
 .myRow4 {
     height: 150px;
     font-size: xx-large;
-    font-family: cursive;
-    font-weight: 900;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    letter-spacing: 7px;
     color: whitesmoke;
 }
 .myRow5 {
