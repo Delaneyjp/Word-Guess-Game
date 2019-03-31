@@ -17,7 +17,7 @@ header h1 {
     color: gold;
     font-weight: 900;
     text-align: center;
-    text-shadow: 5px 5px brown;
+    text-shadow: 2px 5px brown;
 }
 
 /* NEXT */
@@ -150,7 +150,7 @@ body {
         font-size: 30px;
         font-weight: 500px;
         color: gold;
-        text-shadow: 1px 8px black;
+        text-shadow: 1px 4px black;
         letter-spacing: 5px;
     }
     .myRow5 {
@@ -175,7 +175,7 @@ body {
         font-size: 30px;
         font-weight: 500px;
         color: gold;
-        text-shadow: 1px 8px black;
+        text-shadow: 1px 4px black;
         letter-spacing: 5px;
     }
     .myRow5 {

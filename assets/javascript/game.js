@@ -24,14 +24,14 @@ var masterWordList = // Word list
         "lord of the rings"
     ];
 
-const totalMaxTries = 9; // Maximum number of tries player has
+const totalMaxTries = 9;
 const space = "space";
 
-// Hangman game object
+// Hangman - Object
 var hangmanGame = {
-    wordList: masterWordList,       //  Holds the word list, this can be any array of strings
-    guessingWord: [],                //  Holds the characters we've guessed right
-    guessedLetters: [],             //  Holds the unique letters we've guessed
+    wordList: masterWordList,       //  List of Movie Titles
+    guessingWord: [],               //  Holds the characters guessed right
+    guessedLetters: [],             //  Holds the guessed letters
     currentWord: "",                //  Holds the current word we're guessing from the wordList
     lastWordIdx: -1,                //  Holds the last word index, so we don't pick the same word twice in a row 
     wins: 0,                        //  Total wins
@@ -41,8 +41,7 @@ var hangmanGame = {
     hasFinished: true,              //  If we've either won or loss
 
     //--------------------------------------------------------
-    // resetGame() function
-    // resets all of our game variables.  Should be ran first.
+    // resetGame() function, which will reset all of our game variables.
     resetGame: function () {
         var idx = -1;
         do {
@@ -52,18 +51,16 @@ var hangmanGame = {
         this.currentWord = this.wordList[idx];
         this.lastWordIdx = idx;
 
-        // Zero out our working arrays.  guessingWord builds our working string, 
-        // guessedLetters holds all letters guessed.
+        // Zero out arrays
         this.guessingWord = [];
         this.guessedLetters = [];
 
         // Reset remainingTries
         this.remainingGuesses = this.maxTries;
 
-        // We have not finished the game
         this.hasFinished = false;
 
-        // Build the guessing word and populate with underscores
+        // Build the word and add underscores in place of letters
         var len = this.currentWord.length;
         for (var i = 0; i < len; i++) {
 
@@ -74,7 +71,7 @@ var hangmanGame = {
             }
         }
 
-        // Hide game over and win and lose
+        // Hide win and lose alerts
         document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
         document.getElementById("newGame").style.cssText = "display: none";
         document.getElementById("youWin").style.cssText = "display: none";
@@ -83,14 +80,14 @@ var hangmanGame = {
         // Show display
         this.updateDisplay();
     },
-    // updateDisplay() function
-    // Updates the HTML display area
+
+    // Updates the HTML display area with counters
     updateDisplay: function () {
         // Total Wins & Looses
         document.getElementById("totalWins").innerText = this.wins;
         document.getElementById("totalLosses").innerText = this.losses;
 
-        // What we have so far of the currentword
+        // currentword being guessed
         var tempWord = "";
         for (var i = 0; i < this.guessingWord.length; i++) {
             if (this.guessingWord[i] === space) {
@@ -105,8 +102,7 @@ var hangmanGame = {
         document.getElementById("guessedLetters").innerText = this.guessedLetters;
     },
 
-    // makeGuess(letter) function
-    // Begins the guess - if we have guesses left we evaluate it
+    // Begins the game
     makeGuess: function (letter) {
         if (this.remainingGuesses > 0) {
             // Make sure we didn't use this letter yet
@@ -118,43 +114,36 @@ var hangmanGame = {
         this.checkWinLose();
         this.updateDisplay();
     },
-    // evaluateGuess(letter) function
-    // Scans through our currentWord to see how many iterations of a letter appear.  Then, change our guessingWord with each letter.
     evaluateGuess: function (letter) {
         // Array to store positions of letters in string
         var positions = [];
 
-        // Loop through word finding all instances of guessed letter, store the indicies in an array.
+        // Loop through word finding all instances of guessed letter, store in an array.
         for (var i = 0; i < this.currentWord.length; i++) {
             if (this.currentWord[i] === letter) {
                 positions.push(i);
             }
         }
 
-        // if there are no indicies, remove a guess
+        // if none, remove a guess
         if (positions.length <= 0) {
             this.remainingGuesses--;
         } else {
-            // Loop through all the indicies and replace the '_' with a letter.
+            // Loop through and replace the underscore with the guessed letter.
             for (var i = 0; i < positions.length; i++) {
                 this.guessingWord[positions[i]] = letter;
             }
         }
     },
-    // checkWin() function
-    // Check's whether we've won the game
     checkWinLose: function () {
         if (this.guessingWord.indexOf("_") === -1) {
             document.getElementById("youWin").style.cssText = "display: block";
             document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
-            // Tack on a win
             this.wins++;
-            // Flag we're done with the game
             this.hasFinished = true;
             return;
         }
         if (this.remainingGuesses <= 0) {
-            // Tack on a win
             this.losses++;
             document.getElementById("youLose").style.cssText = "display: block";
             document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
@@ -172,7 +161,7 @@ function isLetter(keyCode) {
 //---------------------------------------------------------
 // Keyboard event handler
 document.onkeydown = function (event) {
-    // If we finished a game, dump one keystroke and reset.
+    // If game over, click to reset. Or click to guess.
     if (hangmanGame.hasFinished) {
         hangmanGame.resetGame();
         hangmanGame.hasFinished = false;
