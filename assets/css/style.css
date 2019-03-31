@@ -73,7 +73,7 @@ body {
 }
 .myRow3 {
     height:300px;
-    font-size: 100px;
+    font-size: 75px;
     font-weight: 900;
     color: gold;
     text-shadow: 1px 8px black;
@@ -90,4 +90,35 @@ body {
     border-bottom: 2px solid black;
     background: whitesmoke;
     height: 30px;
+}
+
+#totalWins {
+    text-decoration: underline;
+}
+#totalLosses {
+    text-decoration: underline;
+}
+#remainingGuesses {
+    text-decoration: underline;
+}
+
+#currentWord {
+    font-size: 75px;
+    font-weight: 900;
+    color: gold;
+    text-shadow: 1px 8px black;
+    letter-spacing: 10px;
+}
+
+#pressKeyTryAgain, 
+#newGame, 
+#youWin,
+#youLose { display: none;}
+
+#youWin, #youLose {
+    font-size: 50px;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    color:brown;
 }
