@@ -1,2 +1,2 @@
 # Word-Guess-Game
-![Screenshot](HH-scrnsht.png)
+![Screenshot](HH-scrnsht.PNG)
